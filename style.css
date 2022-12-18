@@ -39,6 +39,7 @@ input::placeholder {
     opacity: .8;
     font-size: smaller;
 }
+
 .tip {
     font-size: 15px;
     bottom: 0px;
@@ -46,11 +47,33 @@ input::placeholder {
     width: 300px;
     text-align: center;
 }
-.temp {
+
+.tempDisplay {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
     border: 5px solid white;
     border-radius: 20px;
-    padding: 80px 40px;
-    font-size: 100px;
+    height: 200px;
+    width: 200px;
+    padding: 40px;
+}
+
+.tempDisplay > div:last-child {
+    position: absolute;
+    bottom: 0px;
+    border-top: 1px solid white;
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+    padding: 5px 0px;
+    font-size: 20px;
+}
+
+.temp {
+    font-size: 80px;
 }
 
 ul {
