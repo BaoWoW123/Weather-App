@@ -71,7 +71,11 @@ input::placeholder {
     padding: 5px 0px;
     font-size: 20px;
 }
+.currentDay {
+    position: absolute;
+    top: 10px;
 
+}
 .temp {
     font-size: 80px;
 }
@@ -81,7 +85,7 @@ ul {
     align-items: center;
     justify-content: center;
     list-style-type: none;
-    gap: 20%;
+    gap: 40%;
     font-size: 30px;
 }
 

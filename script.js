@@ -4,18 +4,21 @@ const tempUnit = 'imperial';
 const place = document.querySelector('.location');
 const tempMin = document.querySelector('.temp-min').lastElementChild;
 const tempMax = document.querySelector('.temp-max').lastElementChild;
+const weekday = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+const days = document.querySelectorAll('.day');
+const currentDay = document.querySelector('.currentDay');
 
 searchBtn.onclick = getData;
 
 async function getData() {
     const input = document.querySelector('.input').value;
-    const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${input}&APPID=a93dc5d8b847e21f3fdb25aa086743d9&units=${tempUnit}`, {mode:'cors'});
+    const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${input}&units=${tempUnit}&APPID=a93dc5d8b847e21f3fdb25aa086743d9`, {mode:'cors'});
     const data = await response.json();
-
     temp.textContent = `${data.main.temp}`; 
     tempMax.textContent = `${data.main.temp_max}`;     
     tempMin.textContent = `${data.main.temp_min}`;  
     getState(data);
+    getForecast(input)
 }
 
 async function getState(data) {
@@ -29,5 +32,23 @@ async function getState(data) {
         return place.firstChild.textContent = `${data.name}, ${geoData[0].state}, ${data.sys.country}`;
     } else return place.firstChild.textContent = `${data.name}, ${data.sys.country}`;
 }
+
+async function getForecast(input) {
+    const fetchData = await fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${input}&units=${tempUnit}&APPID=a93dc5d8b847e21f3fdb25aa086743d9`, {mode:'cors'});
+    const response = await fetchData.json();
+    let num = 8;
+
+    currentDay.textContent = weekday[new Date(response.list[0].dt_txt).getDay()];
+
+    for (let i = 0; i < days.length; i++) {
+        let currentTime = await response.list[num].dt_txt;
+        let current = weekday[new Date(currentTime).getDay()];
+        days[i].firstChild.textContent = current;
+        days[i].firstElementChild.textContent = response.list[num].main.temp;        
+        num += 8;
+    }
+    num = 8;
+}
+
 
 // const testResponse = await fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${data.sys.country}&appid=a93dc5d8b847e21f3fdb25aa086743d9&units=${tempUnit}`, {mode:'cors'});
