@@ -1,100 +1,112 @@
 body {
-    background: url("./night.jpg");
-    background-size: cover;
-    background-position: center;
-    height: 100vh;
-    width: 100vw;
-    margin: auto;
-    color: white;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 40px;
-
+  background: url("./night.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  width: 100vw;
+  margin: auto;
+  color: white;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 40px;
 }
 
 .wrapper {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-    width: 100%;
-    height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+  height: 100%;
 }
 
 .location {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 input {
-    background: none;
-    color: white;
-    font-size: large;
-    border: none;
-    border-bottom: 2px solid white;
+  background: none;
+  color: white;
+  font-size: large;
+  border: none;
+  border-bottom: 2px solid white;
 }
 
 input::placeholder {
-    color: white;
-    opacity: .8;
-    font-size: smaller;
+  color: white;
+  opacity: 0.8;
+  font-size: smaller;
 }
 
 .tip {
-    font-size: 15px;
-    bottom: 0px;
-    opacity: .8;
-    width: 300px;
-    text-align: center;
+  font-size: 15px;
+  bottom: 0px;
+  opacity: 0.8;
+  width: 300px;
+  text-align: center;
 }
 
 .tempDisplay {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    border: 5px solid white;
-    border-radius: 20px;
-    height: 200px;
-    width: 200px;
-    padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  border: 5px solid white;
+  border-radius: 20px;
+  height: 200px;
+  width: 200px;
+  padding: 40px;
 }
 
 .tempDisplay > div:last-child {
-    position: absolute;
-    bottom: 0px;
-    border-top: 1px solid white;
-    display: flex;
-    width: 100%;
-    justify-content: space-evenly;
-    padding: 5px 0px;
-    font-size: 20px;
+  position: absolute;
+  bottom: 0px;
+  border-top: 1px solid white;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  padding: 5px 0px;
+  font-size: 20px;
 }
-.currentDay {
-    position: absolute;
-    top: 10px;
 
+.currentDay {
+  position: absolute;
+  top: 10px;
 }
+
 .temp {
-    font-size: 80px;
+  font-size: 80px;
+}
+
+.tempUnitDisplay {
+  position: absolute;
+  font-size: 30px;
+}
+
+.tempUnitDisplay:hover {
+  font-size: 45px;
+  transition: 0.3s;
+  cursor: pointer;
 }
 
 ul {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    list-style-type: none;
-    gap: 40%;
-    font-size: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  list-style-type: none;
+  gap: 40%;
+  font-size: 30px;
 }
 
 li {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 li > div {
-    margin-top: 10px;
+  margin-top: 10px;
 }
