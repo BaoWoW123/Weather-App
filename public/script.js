@@ -90,5 +90,3 @@ function changeTemp() {
   tempUnitDisplay.textContent = unit;
   getData();
 }
-
-// const testResponse = await fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${data.sys.country}&appid=a93dc5d8b847e21f3fdb25aa086743d9&units=${tempUnit}`, {mode:'cors'});
